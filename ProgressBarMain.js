@@ -74,8 +74,8 @@
 		}
 		
 		render(val, info, color) {
-			var val1 = val * 0.01;
-			var x = this.svg_circle_arc_path(500, 500, 450, -90, val1 * 180.0 - 90);
+			var val1 = val ;
+			var x = this.progress(val1);
 			var rounded = Math.round( val * 10 ) / 10;
 
 			
@@ -92,12 +92,17 @@
 		}
 		
 		svg_circle_arc_path(x, y, radius, start_angle, end_angle) {
-		    var end_xy, start_xy;
+		    var end_xy, start_xy ;
 		    start_xy = this.polar_to_cartesian(x, y, radius, end_angle);
 		    end_xy = this.polar_to_cartesian(x, y, radius, start_angle);
-		    return "M " + start_xy[0] + " " + start_xy[1] + " A " + radius + " " + radius + " 0 0 0 " + end_xy[0] + " " + end_xy[1];
+		    return "M 50 500 L" +   radius + " " + radius + " 0 0 0 " + end_xy[0] + " " + end_xy[1];
 		  };
 		  
+		progress(x){
+			var end_x;
+			end_x=900*x;
+			return "M 50 500 L"+ end_x+" 500";
+		};
 
 		onCustomWidgetBeforeUpdate(changedProperties) {
 			this._props = { ...this._props, ...changedProperties };
