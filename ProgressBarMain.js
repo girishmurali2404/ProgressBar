@@ -47,8 +47,8 @@
 		      <div class="metric participation" data-ratio=".95">
 		        <svg viewBox="0 0 1000 500">
 			        <path d="M 50 500 L950 500"></path>
-					<text class='percentage' text-anchor="middle" alignment-baseline="middle" x="500" y="300" font-size="140" font-weight="bold">0%</text>
-					<text class='title' text-anchor="middle" alignment-baseline="middle" x="500" y="450" font-size="90" font-weight="normal"></text>
+					<text class='percentage' text-anchor="middle" alignment-baseline="middle" x="500" y="200" font-size="140" font-weight="bold">0%</text>
+					<text class='title' text-anchor="middle" alignment-baseline="middle" x="500" y="350" font-size="90" font-weight="normal"></text>
   	            </svg>
 		      </div>
 		    </div>
@@ -80,8 +80,8 @@
 
 			
 			if(rounded >=0 && rounded <=100) {
-				this.$style.innerHTML = ':host {border-radius: 10px;border-width: 2px;border-color: black;border-style: solid;display: block;}.body {background: #fff;}.metric {padding: 10%;}.metric svg {max-width: 100%;}.metric path {stroke-width: 75;stroke: #ecf0f1;fill: none;}.metric text {font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;}.metric.participation path.data-arc {stroke: ' + color + ';}.metric.participation text {fill: ' + color + ';}';
-				this.$svg.innerHTML = '<path d="M 50 500 L950 500"></path><text class="percentage" text-anchor="middle" alignment-baseline="middle" x="500" y="300" font-size="140" font-weight="bold">' + rounded + '%</text><text class="title" text-anchor="middle" alignment-baseline="middle" x="500" y="450" font-size="90" font-weight="normal">' + info + '</text><path d="' + x + '" class="data-progress"></path>"';
+				this.$style.innerHTML = ':host {border-radius: 10px;border-width: 2px;border-color: white;border-style: solid;display: block;}.body {background: #fff;}.metric {padding: 10%;}.metric svg {max-width: 100%;}.metric path {stroke-width: 75;stroke: #ecf0f1;fill: none;}.metric text {font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;}.metric.participation path.data-arc {stroke: ' + color + ';}.metric.participation text {fill: ' + color + ';}';
+				this.$svg.innerHTML = '<path d="M 50 500 L950 500"></path><text class="percentage" text-anchor="middle" alignment-baseline="middle" x="500" y="200" font-size="140" font-weight="bold">' + rounded + '%</text><text class="title" text-anchor="middle" alignment-baseline="middle" x="500" y="350" font-size="90" font-weight="normal">' + info + '</text><path d="' + x + '" class="data-progress"></path>"';
 			}
 		}
 
