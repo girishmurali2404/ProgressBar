@@ -32,7 +32,7 @@
 		  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
 		}
 		
-		.metric.participation path.data-arc {
+		.metric.participation path.data-progress {
 		  stroke: #27ae60;
 		}
 		
@@ -81,22 +81,10 @@
 			
 			if(rounded >=0 && rounded <=100) {
 				this.$style.innerHTML = ':host {border-radius: 10px;border-width: 2px;border-color: black;border-style: solid;display: block;}.body {background: #fff;}.metric {padding: 10%;}.metric svg {max-width: 100%;}.metric path {stroke-width: 75;stroke: #ecf0f1;fill: none;}.metric text {font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;}.metric.participation path.data-arc {stroke: ' + color + ';}.metric.participation text {fill: ' + color + ';}';
-				this.$svg.innerHTML = '<path d="M 50 500 L950 500"></path><text class="percentage" text-anchor="middle" alignment-baseline="middle" x="500" y="300" font-size="140" font-weight="bold">' + rounded + '%</text><text class="title" text-anchor="middle" alignment-baseline="middle" x="500" y="450" font-size="90" font-weight="normal">' + info + '</text><path d="' + x + '" class="data-arc"></path>"';
+				this.$svg.innerHTML = '<path d="M 50 500 L950 500"></path><text class="percentage" text-anchor="middle" alignment-baseline="middle" x="500" y="300" font-size="140" font-weight="bold">' + rounded + '%</text><text class="title" text-anchor="middle" alignment-baseline="middle" x="500" y="450" font-size="90" font-weight="normal">' + info + '</text><path d="' + x + '" class="data-progress"></path>"';
 			}
 		}
-		  
-		polar_to_cartesian(cx, cy, radius, angle) {
-		    var radians;
-		    radians = (angle - 90) * Math.PI / 180.0;
-		    return [Math.round((cx + radius * Math.cos(radians)) * 100) / 100, Math.round((cy + radius * Math.sin(radians)) * 100) / 100];
-		}
-		
-		svg_circle_arc_path(x, y, radius, start_angle, end_angle) {
-		    var end_xy, start_xy ;
-		    start_xy = this.polar_to_cartesian(x, y, radius, end_angle);
-		    end_xy = this.polar_to_cartesian(x, y, radius, start_angle);
-		    return "M 50 500 L" +   radius + " " + radius + " 0 0 0 " + end_xy[0] + " " + end_xy[1];
-		  };
+
 		  
 		progress(x){
 			var end_x;
