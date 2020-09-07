@@ -82,7 +82,7 @@
 			var valul1 = valul;
 			var x = this.progress(val1,valll1,valul1);
 			var rounded = Math.round( val * 10 ) / 10;
-			var percentage = (val1/(valul1-valll1));
+			var percentage = (val1/(valul1-valll1))*100;
 
 			
 			if(rounded >=0 && rounded <=100) {
