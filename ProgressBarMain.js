@@ -73,9 +73,11 @@
 			this._props = {};
 		}
 		
-		render(val,val1 ,val2, info, color) {
+		render(val,valll ,valul, info, color) {
 			var val1 = val ;
-			var x = this.progress(val1);
+			var valll1 = valll;
+			var valul1 = valul;
+			var x = this.progress(val1,valll1,valul1);
 			var rounded = Math.round( val * 10 ) / 10;
 
 			
@@ -86,9 +88,9 @@
 		}
 
 		  
-		progress(x){
+		progress(x,ll,ul){
 			var end_x;
-			end_x=900*x*0.01;
+			end_x=900*(x/(ul-ll))*0.01;
 			return "M 50 500 L"+ end_x+" 500";
 		};
 
