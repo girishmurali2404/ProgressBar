@@ -73,7 +73,7 @@
 			this._props = {};
 		}
 		
-		render(val, info, color) {
+		render(val,val1 ,val2, info, color) {
 			var val1 = val ;
 			var x = this.progress(val1);
 			var rounded = Math.round( val * 10 ) / 10;
@@ -101,6 +101,14 @@
 				this.$value = changedProperties["value"];
 			}
 			
+			if ("LowerLimitvalue" in changedProperties) {
+				this.$LowerLimitvalue = changedProperties["LowerLimitvalue"];
+			}
+			
+			if ("UpperLimitvalue" in changedProperties) {
+				this.$UpperLimitvalue = changedProperties["UpperLimitvalue"];
+			}
+			
 			if ("info" in changedProperties) {
 				this.$info = changedProperties["info"];
 			}
@@ -109,7 +117,7 @@
 				this.$color = changedProperties["color"];
 			}
 			
-			this.render(this.$value, this.$info, this.$color);
+			this.render(this.$value,this.$LowerLimitvalue,this.$UpperLimitvalue, this.$info, this.$color);
 		}
 	}
 	
