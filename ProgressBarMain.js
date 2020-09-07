@@ -90,7 +90,7 @@
 		  
 		progress(x,ll,ul){
 			var end_x;
-			end_x=900*(x/(ul-ll))*0.01;
+			end_x=900*(x/(ul-ll));
 			return "M 50 500 L"+ end_x+" 500";
 		};
 
