@@ -49,5 +49,5 @@
 		}
 	}
 
-	customElements.define("com-demo-box-bps", BoxBps);
+	customElements.define("com-demo-progressbar-bps", BoxBps);
 })();
